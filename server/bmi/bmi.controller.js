@@ -65,6 +65,7 @@ export const processdata = async (req, res) => {
 
 
   let jsonPath = req.body.jsonPath;
+  
   getjsonStream(jsonPath).pipe(es.mapSync((data) => {
 
     let bmi = data.WeightKg / ((data.HeightCm / 100) * (data.HeightCm / 100));
